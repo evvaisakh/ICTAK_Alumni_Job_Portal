@@ -12,13 +12,21 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
+import { FooterComponent } from './footer/footer.component';
+import { AdmindashComponent } from './admindash/admindash.component';
+import { UserdashComponent } from './userdash/userdash.component';
+import { FacultydashComponent } from './facultydash/facultydash.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    SignupComponent
+    SignupComponent,
+    FooterComponent,
+    AdmindashComponent,
+    UserdashComponent,
+    FacultydashComponent
   ],
   imports: [
     BrowserModule,
