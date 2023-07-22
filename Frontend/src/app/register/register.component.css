@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: cadetblue;
+
+  
+ }
+ .fullform{ 
+    font-size: large;
+    color: brown;
+    border: solid 3px rgb(189, 26, 26);
+    padding: 50px;
+    float:left ;
+    background-color: aliceblue;
+    margin-left: 580px;
+    margin-top: 100px;
+ }
+ #head{
+    text-align: center;
+    font-size: xx-large;
+ }
