@@ -15,7 +15,9 @@ import { SignupComponent } from './signup/signup.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdmindashComponent } from './admindash/admindash.component';
 import { UserdashComponent } from './userdash/userdash.component';
-import { FacultydashComponent } from './facultydash/facultydash.component';
+import { EmployerdashComponent } from './employerdash/employerdash.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,7 @@ import { FacultydashComponent } from './facultydash/facultydash.component';
     FooterComponent,
     AdmindashComponent,
     UserdashComponent,
-    FacultydashComponent
+    EmployerdashComponent,
   ],
   imports: [
     BrowserModule,
