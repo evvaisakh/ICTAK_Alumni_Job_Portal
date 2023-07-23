@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const alumniSchema = mongoose.Schema({
+const empSchema = mongoose.Schema({
     name:{
         type:String,
         required:true
@@ -12,26 +12,26 @@ const alumniSchema = mongoose.Schema({
         type:Number,
         required:true
     },
-    qualification:{
+    designation:{
         type:String,
         required:true
     },
-    courses:{
+    companyname:{
         type:String,
         required:true
     },
-    batch:{
+    location:{
         type:String,
         required:true
     },
-    placement:{
-        type:String,
+    username:{
+        type:Number,
         required:true
     },
-    company:{
+    password:{
         type:String,
         required:true
     }
 });
-const alumniData= mongoose.model('Alumnidata',alumniSchema);
-module.exports = alumniData;
+const jobModel = mongoose.model('Jobdetails',jobSchema);
+module.exports = jobModel;
