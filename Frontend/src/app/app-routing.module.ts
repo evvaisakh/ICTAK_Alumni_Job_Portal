@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { AdmindashComponent } from './admindash/admindash.component';
-import { EmployerdashComponent } from './employerdash/employerdash.component';
-import { UserdashComponent } from './userdash/userdash.component';
+import { AlumniSignupComponent } from './main/alumni-signup/alumni-signup.component';
+import { EmpSignupComponent } from './main/emp-signup/emp-signup.component';
+import { EmpLoginComponent } from './main/emp-login/emp-login.component';
+import { LoginComponent } from './main/login/login.component';
+import { AdminLoginComponent } from './main/admin-login/admin-login.component';
+import { JobsComponent } from './main/jobs/jobs.component';
 
-const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'login',component:LoginComponent},
-  {path:'signup',component:SignupComponent},
-  {path:'admin',component:AdmindashComponent},
-  {path:'employer',component:EmployerdashComponent},
-  {path:'user',component:UserdashComponent}
-];
+const routes: Routes = [{path:'',pathMatch:'full',redirectTo:'home'},
+{path:'home',component:HomeComponent},
+{path:'alumnisignup',component:AlumniSignupComponent},
+{path:'employersignup',component:EmpSignupComponent},
+{path:'employerlogin',component:EmpLoginComponent},
+{path:'alumnilogin',component:LoginComponent},
+{path:'adminlogin',component:AdminLoginComponent},
+{path:'jobs',component:JobsComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,44 +1,63 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/material.module';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
-import { SignupComponent } from './signup/signup.component';
-import { FooterComponent } from './footer/footer.component';
-import { AdmindashComponent } from './admindash/admindash.component';
-import { UserdashComponent } from './userdash/userdash.component';
-import { EmployerdashComponent } from './employerdash/employerdash.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FilterPipe } from './pipes/filter.pipe';
+import { AdminLoginComponent } from './main/admin-login/admin-login.component';
+import { EmpLoginComponent } from './main/emp-login/emp-login.component';
+import { EmpSignupComponent } from './main/emp-signup/emp-signup.component';
+import { FooterComponent } from './main/footer/footer.component';
+import { HeaderComponent } from './main/header/header.component';
+import { HomeComponent } from './main/home/home.component';
+import { JobsComponent } from './main/jobs/jobs.component';
+import { LoginComponent } from './main/login/login.component';
+import { AlumniSignupComponent } from './main/alumni-signup/alumni-signup.component';
+import { SignUpService } from './main/sign-up.service';
+import { TokenInterceptorService } from './token-interceptor.service';
+import { AdminApiService } from './admin/admin-api.service';
+import { EmployerApiService } from './employer/employer-api.service';
+import { AlumniApiService } from './alumni/alumni-api.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    HomeComponent,
-    SignupComponent,
+    FilterPipe,
+    AdminLoginComponent,
+    EmpLoginComponent,
+    EmpSignupComponent,
     FooterComponent,
-    AdmindashComponent,
-    UserdashComponent,
-    EmployerdashComponent,
+    HeaderComponent,
+    HomeComponent,
+    JobsComponent,
+    LoginComponent,
+    AlumniSignupComponent,
+
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CarouselModule,
   ],
-  providers: [],
+  providers: [SignUpService, EmpLoginComponent,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  },
+AdminApiService, TokenInterceptorService, EmployerApiService, AlumniApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

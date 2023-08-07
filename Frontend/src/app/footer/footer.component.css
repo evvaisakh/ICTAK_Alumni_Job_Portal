@@ -1,163 +1,75 @@
-.footer {
-    background-color: #414141;
-    width: 100%;
-    text-align: left;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 50px;
-    margin-top: 50px;
-}
-  
-.footer .footer-left,
-.footer .footer-center,
-.footer .footer-right {
-    display: inline-block;
-    vertical-align: top;
-}
-  
-  
-  /* footer left*/
-  
-.footer .footer-left {
-    width: 33%;
-    padding-right: 15px;
-}
-  
-.footer .about {
-    line-height: 20px;
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: normal;
-    margin: 0;
-}
-  
-.footer .about span {
-    display: block;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-  
-.footer .icons {
-    margin-top: 25px;
-}
-  
-.footer .icons a {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    background-color: #33383b;
-    border-radius: 2px;
-    font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 35px;
-    margin-right: 3px;
-    margin-bottom: 5px;
-}
-  
-  
-  /* footer center*/
-  
-.footer .footer-center {
-    width: 30%;
-}
-  
-.footer .footer-center i {
-    background-color: #33383b;
-    color: #ffffff;
-    font-size: 25px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 42px;
-    margin: 10px 15px;
-    vertical-align: middle;
-}
-  
-.footer .footer-center {
-    font-size: 17px;
-    line-height: 38px;
-}
-  
-.footer .footer-center p {
-    display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    margin: 0;
-}
-  
-.footer .footer-center p span {
-    display: block;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 2;
-}
-  
-.footer .footer-center p a {
-    color: #0099ff;
-    text-decoration: none;
-}
-  
-  
-  /* footer right*/
-  
-.footer .footer-right {
-    width: 35%;
-}
-  
-.footer h2 {
-    color: #ffffff;
-    font-size: 36px;
-    font-weight: normal;
-    margin: 0;
-}
-  
-.footer h2 span {
-    color: #0099ff;
-}
-  
-.footer .menu {
-    color: #ffffff;
-    margin: 20px 0 12px;
+/* Reset default margin and padding for the footer and its children */
+footer {
+    margin: auto;
     padding: 0;
-}
+    background-color: aquamarine;
+  }
   
-.footer .menu a {
-    display: inline-block;
-    line-height: 1.8;
-    text-decoration: none;
-    color: inherit;
-}
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
   
-.footer .menu a:hover {
-    color: #0099ff;
-}
+  .footer-left, .footer-center, .footer-right {
+    flex: 1 1 auto;
+    padding: 10px;
+  }
   
-.footer .name {
-    color: #0099ff;
+  .footer-left h3, .footer-center h3, .footer-right h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-left p, .footer-center p, .footer-right p {
     font-size: 14px;
-    font-weight: normal;
-    margin: 0;
-}
+    margin: 5px 0;
+  }
   
-@media (max-width: 767px) {
-    .footer {
-      font-size: 14px;
+  .footer-center i {
+    margin-right: 10px;
+  }
+  
+  .footer-right ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-right li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-right a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .footer-right a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    background-color: blanchedalmond;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    font-size: 12px;
+    margin: 0;
+  }
+  
+  /* Responsive CSS */
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
     }
-    .footer .footer-left,
-    .footer .footer-center,
-    .footer .footer-right {
-      display: block;
-      width: 100%;
-      margin-bottom: 40px;
-      text-align: center;
+  
+    .footer-left, .footer-center, .footer-right {
+      flex: 100%;
     }
-    .footer .footer-center i {
-      margin-left: 0;
-    }
-}
+  }
+  
