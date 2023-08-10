@@ -26,7 +26,6 @@ export class EmpLoginComponent implements OnInit {
 
   login(){ 
     this.signupService.singleemployer(this.loginForm.value).subscribe(res=>{
-
       this.holder = res.user
       console.log("getting user", this.holder._id)
       localStorage.setItem('token',res.token)

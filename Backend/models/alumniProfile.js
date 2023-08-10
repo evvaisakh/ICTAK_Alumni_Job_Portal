@@ -2,50 +2,39 @@ const mongoose = require('mongoose');
 const alumniSchema = new mongoose.Schema({
     name:{
         type: String, 
-        required: true 
     },
    email:{ 
         type: String, 
-        required: true 
     },
    phone:{ 
         type: Number, 
-        required: true 
     },
     alternate_phone_number:{ 
         type: Number, 
     },
    gender:{ 
         type: String, 
-        required: true 
     },
     date_of_birth:{ 
         type: Date, 
-        required: true 
     },
     marital_status:{ 
         type: String, 
-        required: true 
     },
     permanent_address:{ 
-        type: String, 
-        required: true 
+        type: String,  
     },
     pincode:{ 
         type: Number, 
-        required: true 
     },
     district:{ 
         type: String, 
-        required: true 
     },
     state:{ 
         type: String, 
-        required: true 
     },
     country:{ 
         type: String, 
-        required: true 
     },
     profile:{ 
         type: String, 
@@ -146,7 +135,6 @@ const alumniSchema = new mongoose.Schema({
     },
     password:{
         type: String,
-        required: true
     }
 });
 

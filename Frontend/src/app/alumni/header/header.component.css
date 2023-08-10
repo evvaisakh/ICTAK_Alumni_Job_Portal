@@ -1,0 +1,11 @@
+nav{
+    background: linear-gradient(90deg, rgb(233, 182, 208)0%, rgb(134, 134, 223)35%, rgb(122, 206, 223)100%);
+}
+.logo{
+    display: block;
+    max-width:100px;
+    max-height:13px;
+    scale: 5;
+    aspect-ratio: auto;
+    padding-left: 20px;
+}

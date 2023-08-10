@@ -1,1 +1,59 @@
-<p>viewjobs works!</p>
+<app-header></app-header>
+<section id="home" class="bg-cover" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+  <div class="overlay"></div>
+  <div class="container text-white text-center">
+    <div class="row">
+      <div class="col-12 p-5">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Find your Job Here" [(ngModel)]="filterString" >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <tr class="row" *ngFor="let job of jobs | filter:filterString" >
+    <div class="col-md-12 m-2">
+      <mat-card [ngClass]="{'disable' : datecheck(job.closingDate)}">
+        <mat-card-content >
+          <h2>{{job.jobTitle}}<h4 *ngIf="datecheck(job.closingDate)" id="closed"><b>APPLICATION CLOSED</b></h4></h2>
+          <h4>Company : {{job.companyName}}</h4>
+          <h4>Place : {{job.location}}</h4>
+          <h4>Qualification : {{job.qualification}}</h4>
+          <h4>Experience : {{job.experience}}</h4>
+          <h4>ClosingDate : {{job.closingDate|date}}</h4>
+          <h4>Salary-Range : {{job.salaryRange}}</h4>
+          <h4>Skills : {{job.skills}}</h4> 
+          <p class="scroll">Description : {{job.description}}</p>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-light" style="background-color:rgb(192, 92, 184)" data-bs-toggle="modal"
+            data-bs-target="#contents" (click)="storeid(job._id)" [disabled]="datecheck(job.closingDate)"> Apply </button>
+          <!-- Modal -->
+          <div class="modal fade" id="contents" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form  [formGroup]="form">
+                  <div class="modal-body">
+                   <div class="m-2 form-group">
+                    <input class="form-control" type="file" id="formFile" (change)="fileselect($event)"/>
+                    <h1 class="m-2">&</h1>
+                    <input type="text" placeholder="Profile Link" formControlName="link" class="form-control">
+                   </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button  class="btn btn-primary" (click)="onSubmit()">Save</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> 
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </tr>
+</div>

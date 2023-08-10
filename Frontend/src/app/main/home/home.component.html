@@ -1,1 +1,181 @@
-<p>home works!</p>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid">
+       <a routerLink="">
+        <img src="../../../assets/images/LOGO_ICTAK-ENG-ALT-White-Text.png" alt="logo" class="logo">
+       </a> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <button class="color" mat-raised-button [matMenuTriggerFor]="menu" routerLink="/jobs" >Jobs</button>
+          <button class="color" mat-raised-button [matMenuTriggerFor]="menu" >Login/Register</button>
+          <mat-menu #menu="matMenu">
+            <h3>Registration</h3>
+            <button mat-menu-item routerLink="/employersignup">Employer/Faculty</button>
+            <button mat-menu-item routerLink="/alumnisignup">Alumni</button>
+          <h3>Login</h3> 
+          <button mat-menu-item routerLink="/alumnilogin">AlumniLogin</button>
+          <button mat-menu-item routerLink="/employerlogin" >Employer Login</button>
+          <button mat-menu-item routerLink="/adminlogin" >Admin Login</button>
+          </mat-menu>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+    <div class="container details mt-5">
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Build your Career with AlumConnect by ICT Academy of Kerala</h1>
+                        <h3 align="justify" style="color:white;font-size:15px">ICT Academy of Kerala (ICTAK) is a social enterprise officially
+                            launched on the 24th of June, 2014. The organization had a humble
+                            beginning providing skill training programs to selected academic
+                            institutions. Over the years, ICTAK has grown to a prime service
+                            provider of all ICT and innovation-related training and
+                            capacity-building programs in the state.ICT Academy of Kerala provides
+                            the best quality education to upskill the youths across the state
+                            in various sectors. Join our courses and build your future!
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <img src="../../../assets/images/home bg-image.jpg" alt="bgimage" class="bg-image"> 
+    </div>
+    <div class="client-count-wrp ">
+        <div class="container">
+            <div class="client-count-wrp-inner row">
+                <div class="cards col">
+                    <h3>{{seekers}}+</h3>
+                    <p>Talent seekers</p>
+                </div>
+                <div class="cards col">
+                    <h3>{{trainers}}+</h3>
+                    <p>Trained Talents</p>
+                </div>
+                <div class="cards col">
+                    <h3>{{registeredcount}}+</h3>
+                    <p>Registered Talents</p>
+                </div>
+                <div class="cards col">
+                    <h3>{{works}}+</h3>
+                    <p>Works and Projects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container hexa">
+        <div class="hexagon">
+            <div class="shape">
+                <img src="../../../assets/images/p1.jpg" alt="">
+                <div class="content">
+                    <div>
+                        <h3>Jerin Paul</h3>
+                    <h3>MEAN STACK DEVELOPER</h3>
+                <p>I joined ICTAK after my post-graduation. One thing that impress me the most
+                    is the attitude of all the employees. I got placed at a good 
+                    company with the excellent training at ICTAK.
+                </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hexagon">
+            <div class="shape">
+                <img src="../../../assets/images/p2.jpg" alt="">
+                <div class="content">
+                    <div>
+                        <h3>Ann Mathew</h3>
+                        <h3>MEAN STACK DEVELOPER</h3>
+                        <p>I joined ICTAK after my post-graduation. One thing that impress me the most
+                            is the attitude of all the employees. I got placed at a good 
+                            company with the excellent training at ICTAK.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hexagon">
+            <div class="shape">
+                <img src="../../../assets/images/p3.jpg" alt="">
+                <div class="content">
+                    <div>
+                        <h3>Manuel John</h3>
+                        <h3>MEAN STACK DEVELOPER</h3>
+                        <p>I joined ICTAK after my post-graduation. One thing that impress me the most
+                            is the attitude of all the employees. I got placed at a good 
+                            company with the excellent training at ICTAK.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+<div class="container mt-3">
+    
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div class="imgBox animated bounceInRight" style="animation-delay:1s">
+                <img src="../../../assets/images/p1.jpg" alt="...">
+            </div>
+            <div class="carousel-caption animated bounceInLeft" style="animation-delay:2s" >
+            <h3>Ann Mathew</h3>
+            <h4>MEAN STACK DEVELOPER</h4>
+            <p>I joined ICTAK after my post-graduation. One thing that impress me the most
+                is the attitude of all the employees. I got placed at a good 
+                company with the excellent training at ICTAK.
+            </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="imgBox animated bounceInRight" style="animation-delay:1s">
+                <img src="../../../assets/images/p2.jpg" alt="...">
+            </div>
+            <div class="carousel-caption animated bounceInLeft" style="animation-delay:2s" >
+                <h3>Jerin Paul</h3>
+                <h4>MEAN STACK DEVELOPER</h4>
+            <p>I joined ICTAK after my post-graduation. One thing that impress me the most
+                is the attitude of all the employees. I got placed at a good 
+                company with the excellent training at ICTAK.
+            </p>
+                </div>
+          </div>
+          <div class="carousel-item">
+            <div class="imgBox animated bounceInRight" style="animation-delay:1s">
+                <img src="../../../assets/images/p3.jpg" alt="...">
+            </div>
+            <div class="carousel-caption animated bounceInLeft" style="animation-delay:2s" >
+                <h3>Manuel John</h3>
+                <h4>MEAN STACK DEVELOPER</h4>
+                <p>I joined ICTAK after my post-graduation. One thing that impress me the most
+                    is the attitude of all the employees. I got placed at a good 
+                    company with the excellent training at ICTAK.
+                </p>
+                </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</div>
+  
+<app-footer></app-footer>

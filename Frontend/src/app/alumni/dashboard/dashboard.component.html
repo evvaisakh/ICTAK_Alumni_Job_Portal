@@ -1,1 +1,106 @@
-<p>dashboard works!</p>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+       <img src="../../../assets/images/ICT_Academy_Kerala.webp.png" alt="logo" class="logo"> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="ms-auto">
+            <button mat-stroked-button (click)="tojobs(alumnidata._id)" color="basic" class="m-2 me-4">
+                <mat-icon>works_outline</mat-icon>View Jobs
+            </button>
+            <button mat-stroked-button color="basic" class="m-2 me-4" routerLink="" (click)="function()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+<div class="container-fluid mt-1">
+    <div class="row">
+        <div class="col-md">
+               <h1>Welcome  {{alumnidata.name}}</h1>
+            
+        </div>
+    </div>
+</div>
+<mat-card class="m-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10"> 
+                <h2>Personal Details</h2>
+            </div>
+            <div class="col-md-2">
+                <button type="button" (click)="navigatetogeneraldata(alumnidata._id)"
+                    class="btn btn-light">Add/Edit</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Name</h4>
+                <h3>{{alumnidata.name}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Email</h4>
+                <h3>{{alumnidata.email}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Phone Number</h4>
+                <h3>{{alumnidata.phone}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Highest Qualification</h4>
+                <h3>{{alumnidata.highest_qualification}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Course Studied At ICTAK</h4>
+                <h3>{{alumnidata.course_started_at_ictak}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Batch</h4>
+                <h3>{{alumnidata.batch_details}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Gender</h4>
+                <h3>{{alumnidata.gender}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Date of Birth</h4>
+                <h3>{{alumnidata.date_of_birth|date}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Permanent Address</h4>
+                <h3>{{alumnidata.permanent_address}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-md-4">
+                <h4>Alternate Number</h4>
+                <h3>{{alumnidata.alternate_phone_number}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Pincode</h4>
+                <h3>{{alumnidata.pincode}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>District</h4>
+                <h3>{{alumnidata.district}}</h3>
+            </div>
+        </div>
+        <div class="row">
+           
+            <div class="col-md-4">
+                <h4>State</h4>
+                <h3>{{alumnidata.state}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Country</h4>
+                <h3>{{alumnidata.country}}</h3>
+            </div>
+        </div>
+    </div>
+</mat-card>

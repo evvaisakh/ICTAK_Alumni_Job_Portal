@@ -9,7 +9,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
     exports:[
@@ -24,6 +31,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         MatFormFieldModule,
         MatMenuModule,
         MatSnackBarModule,
+        MatExpansionModule,
+        MatSidenavModule,
+        MatListModule,
+        MatDividerModule,
+        MatGridListModule,
+        MatDatepickerModule,
+        MatRadioModule
     ]
 })
 

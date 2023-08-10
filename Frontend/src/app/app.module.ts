@@ -23,6 +23,9 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { AdminApiService } from './admin/admin-api.service';
 import { EmployerApiService } from './employer/employer-api.service';
 import { AlumniApiService } from './alumni/alumni-api.service';
+import { AdminModule } from './admin/admin.module';
+import { EmployerModule } from './employer/employer.module';
+import { AlumniModule } from './alumni/alumni.module';
 
 
 @NgModule({
@@ -44,6 +47,9 @@ import { AlumniApiService } from './alumni/alumni-api.service';
     BrowserModule,
     CommonModule,
     AppRoutingModule,
+    AdminModule,
+    EmployerModule,
+    AlumniModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,

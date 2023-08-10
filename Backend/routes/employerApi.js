@@ -102,7 +102,7 @@ router.post('/employersignup', async (req, res) => {
     }
 });
 
-//EMPLOYEE LOGIN CHECK
+//EMPLOYER LOGIN CHECK
 router.post('/emplogin', async (req, res) => {
     try {
         const user = await EmployerData.findOne({ 
