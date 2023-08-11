@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SignUpService } from '../sign-up.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -26,16 +27,16 @@ export class LoginComponent implements OnInit {
   login(){
     this.signupService.getalumnilogin(this.loginForm.value).subscribe(res=>{
       if(res.message){
-       alert('Admin not verified yet')
-       this.router.navigate(['/alumnilogin'])
+       Swal.fire('Alert!','Invalid login or Admin not verified your data yet.','info');
+       this.router.navigate(['/alumnilogin']);
       } 
       else{
         this.holder = res.data
         console.log(res)
         console.log('token',res.token);
-        localStorage.setItem('token',res.token)
-        alert('Successfully Login')
-        this.router.navigateByUrl(`/alumnidashboard/${this.holder._id}`)
+        localStorage.setItem('token',res.token);
+        Swal.fire('Success!', 'You have successfully logged in.', 'success');
+        this.router.navigateByUrl(`/alumnidashboard/${this.holder._id}`);
       } 
     })
   }

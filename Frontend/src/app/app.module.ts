@@ -26,6 +26,7 @@ import { AlumniApiService } from './alumni/alumni-api.service';
 import { AdminModule } from './admin/admin.module';
 import { EmployerModule } from './employer/employer.module';
 import { AlumniModule } from './alumni/alumni.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { AlumniModule } from './alumni/alumni.module';
     EmployerModule,
     AlumniModule,
     BrowserAnimationsModule,
+    SweetAlert2Module,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,

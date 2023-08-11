@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlumniApiService } from '../alumni-api.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-experience',
@@ -38,7 +39,7 @@ export class ExperienceComponent implements OnInit {
     this.alumniApi.alumniexperience(this.data, this.id).subscribe(res=>{
       console.log(res)
       this.data=res
-      alert("Data updated successfully")
+      Swal.fire('Info!','Data updated successfully.','info');
       this.ngOnInit()
       this.router.navigate([`alumnidashboard/${this.id}`])
     });

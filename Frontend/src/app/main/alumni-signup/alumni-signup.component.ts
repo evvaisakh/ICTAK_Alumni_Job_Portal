@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SignUpService } from '../sign-up.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-alumni-signup',
@@ -30,11 +31,12 @@ export class AlumniSignupComponent implements OnInit {
   sign(){
     this.signup.addData(this.alumniSignup.value).subscribe((res)=>{
       if(res.message){
-        alert(res.message)  
+        Swal.fire('Info!',res.message,'info');  
+        this.alumniSignup.reset();
       }
       else{
-        alert('Registered successfully')
-        this.router.navigate(['/home'])
+        Swal.fire('Success!','Registered successfully.','success');
+        this.router.navigate(['/home']);
       }
     })
   }

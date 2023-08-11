@@ -43,7 +43,7 @@ export class EmployerApiService {
   }
 
   getalumnilength(){
-   return this.http.get(`${this.apiUrl}/alumni/aluminiVer`)
+   return this.http.get(`${this.apiUrl}/alumni/alumniVer`)
   }
   getapplicationlength(){
    return this.http.get(`${this.apiUrl}/application/Apps`)

@@ -36,7 +36,7 @@ export class JobpostformComponent implements OnInit {
     if(status !== "INVALID"){ 
       this.api.postJob(this.jobForm.value).subscribe(res=>{
         console.log(res);
-        window.alert("job posted")
+        window.alert("Job posted")
       })
     } else {
       this.status = true

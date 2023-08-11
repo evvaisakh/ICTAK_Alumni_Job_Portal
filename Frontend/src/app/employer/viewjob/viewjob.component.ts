@@ -54,7 +54,6 @@ export class ViewjobComponent implements OnInit {
       console.log(res)
       this.profile = res
       console.log(this.profile.name, this.profile.education.qualification);
-      
     })
   }
 

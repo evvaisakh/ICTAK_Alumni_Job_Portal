@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SignUpService } from '../sign-up.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-login',
@@ -28,12 +29,12 @@ export class AdminLoginComponent implements OnInit {
       console.log('data from backend',res)
       localStorage.setItem('token',res.token)
       if(res.message){
-        alert('Invalid username and password')
-        this.router.navigate(['/adminlogin'])
+        Swal.fire('Error!', 'Invalid username or password.', 'error');
+        this.router.navigate(['/adminlogin']);
       }
       else{
-        alert("Admin successfully Logged In")
-        this.router.navigate(['/dashadmin'])
+        Swal.fire('Success!','Admin successfully logged in.','success');
+        this.router.navigate(['/dashadmin']);
       } 
     })
   };

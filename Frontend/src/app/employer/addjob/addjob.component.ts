@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployerApiService } from '../employer-api.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addjob',
@@ -38,7 +39,7 @@ export class AddjobComponent implements OnInit {
     console.log(this.addForm.value.postedBy);
     this.api.addJob(this.addForm.value).subscribe(res=>{
       console.log(res);
-      alert('data saved successfully')
+      Swal.fire('Success!','Data saved successfully.','success');
       this.addForm.reset();
     })
   }

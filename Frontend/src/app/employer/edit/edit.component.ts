@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployerApiService } from '../employer-api.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit',
@@ -25,7 +26,7 @@ export class EditComponent implements OnInit {
       console.log(this.data) 
       this.data=res
       console.log(res)
-      alert('data updated')
+      Swal.fire('Info!','Data updated.','info');
       this.ngOnInit()
       this.router.navigate([`/empDash/viewjob`])
     }) 

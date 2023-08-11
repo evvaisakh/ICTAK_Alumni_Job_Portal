@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SignUpService } from '../sign-up.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-emp-login',
@@ -9,9 +10,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./emp-login.component.css']
 })
 export class EmpLoginComponent implements OnInit {
-  empdata:any=[]
-  Id:string  = 'test ID'
-  holder:any=[]
+  empdata: any = [];
+  id: string ='test ID';
+  holder: any = [];
 
   constructor(private router:Router, private signupService:SignUpService) {}
 
@@ -26,17 +27,17 @@ export class EmpLoginComponent implements OnInit {
 
   login(){ 
     this.signupService.singleemployer(this.loginForm.value).subscribe(res=>{
-      this.holder = res.user
-      console.log("getting user", this.holder._id)
+      console.log("getting user", this.holder._id);
+      this.holder = res.user;
       localStorage.setItem('token',res.token)
       if(res.message){
-        alert(res.message)
-        alert("Invalid Login or Admin not verified your data yet!!")
-        this.router.navigate(['/employerlogin'])
+        Swal.fire('Alert!',res.message,'info');
+        this.router.navigate(['/employerlogin']);
+        this.loginForm.reset();
       }
       else{
-        alert("Successfully logged in")
-       this.router.navigateByUrl(`/empDash/dash/${this.holder._id}`)
+        Swal.fire('Success!','Successfully logged in.','success');
+       this.router.navigateByUrl(`/empDash/dash/${this.holder._id}`);
       }    
     }) 
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SignUpService } from '../sign-up.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-emp-signup',
@@ -27,11 +28,12 @@ export class EmpSignupComponent implements OnInit {
   onSubmit(){
     this.signup.addEmployer(this.employerForm.value).subscribe((res)=>{
       if(res.message){
-        alert(res.message)
-          this.router.navigate(['/employersignup'])
+        Swal.fire('Info!',res.message,'info');
+        this.router.navigate(['/employersignup']);
+        this.employerForm.reset();
       }
       else{
-        alert('Registered successfully')
+        Swal.fire('Success!','Registered successfully.','success');
         this.router.navigate(['/employerlogin'])
       }
     })
