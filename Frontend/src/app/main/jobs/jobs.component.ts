@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SignUpService } from '../sign-up.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-jobs',
@@ -25,8 +26,8 @@ export class JobsComponent implements OnInit {
   }
   
   apply(){
-    alert("Login/Signup to apply for the job")
-    this.router.navigate(['/alumnisignup'])
+    Swal.fire('Info!','Login/Signup to apply for the job.','info');
+    this.router.navigate(['/alumnisignup']);
   }
 
 }

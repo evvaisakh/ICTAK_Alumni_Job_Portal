@@ -1,30 +1,37 @@
 <mat-toolbar class="navbar fixed-top">
     <mat-toolbar-row>
-        <button mat-icon-button>
-            <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+        <button (click)="sidenav.toggle()" mat-icon-button>
+          <mat-icon>menu</mat-icon>
         </button>
         <div class="container-fluid logocon">
           <img src="../../../assets/images/ICT_Academy_Kerala.webp.png" alt="logo" class="logo"> 
-    </div>
+        </div>
         <div class="spacer"></div>
-</mat-toolbar-row>
-  </mat-toolbar> 
+    </mat-toolbar-row>
+</mat-toolbar> 
   <div class="row">
     <div class="head head col-sm-12 col-md-4 col-lg-4 col-xl-4">
-  <mat-sidenav-container class="sidenav">
-    <mat-sidenav #sidenav opened="true" mode="side" class="sidenavv">
-        <mat-nav-list>
-            <a mat-list-item routerLink="dash">DASHBOARD</a><br>
-            <a mat-list-item routerLink="viewjob">VIEW JOB</a><br>
-            <a mat-list-item routerLink="job" >ADD JOB</a><br>
-            <a mat-list-item routerLink="" (click)="function()">LOGOUT</a><br>
-            
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div style="height:88vh;"></div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <mat-drawer-container class="sidenav">
+    <mat-drawer #sidenav opened="true" class="sidenavv" mode="side">
+      <mat-nav-list>
+        <mat-list-item routerLink="dash">
+          <button mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
+        </mat-list-item>
+        <mat-list-item routerLink="viewjob">
+          <button mat-button><mat-icon>view_quilt</mat-icon>View Job</button>
+        </mat-list-item>
+        <mat-list-item routerLink="job">
+          <button mat-button><mat-icon>add_circle</mat-icon>Add Job</button>
+        </mat-list-item>
+        <mat-list-item routerLink="" (click)="function()">
+          <button mat-button><mat-icon>logout</mat-icon>Logout</button>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div style="text-align: center;min-height: 600px;"></div>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </div>
   <div class="side"  col-sm-12 col-md-6 col-lg-6 col-xl-6>
     <router-outlet></router-outlet>

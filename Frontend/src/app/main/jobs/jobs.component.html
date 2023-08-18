@@ -11,25 +11,26 @@
         </div>
     </div>
 </section>
-<div class="container">
-    <div class="row" *ngFor="let job of jobs  | filter:filterString">
-      <div class="col m-2">
-            <mat-card>
-                <mat-card-content>
-                    <h1>{{job.jobTitle}}</h1>
-                    <h4>Company : {{job.companyName}}</h4>
-                    <h4>Place : {{job.location}}</h4>
-                    <h4>Qualification : {{job.qualification}}</h4>
-                    <h4>Experience : {{job.experience}}</h4>
-                    <h4>ClosingDate : {{job.closingDate|date}}</h4>
-                    <h4>Salary-Range : {{job.salaryRange}}</h4>
-            
-                    <!-- Button trigger model -->
-                    <button type="button" class="btn btn-light" (click)="apply()"tyle="background-color:rgb(148, 126, 144)" >
-                        Apply
-                    </button>
-                </mat-card-content>
-            </mat-card>
+<div class="row">
+    <div class="col-sm-4 mb-2 mb-sm-0" *ngFor="let job of jobs  | filter:filterString">
+        <div class="card">
+            <div class="card-body">
+                <mat-card>
+                    <mat-card-content>
+                        <h1>{{job.jobTitle}}</h1>
+                        <h4>Company : {{job.companyName}}</h4>
+                        <h4>Place : {{job.location}}</h4>
+                        <h4>Qualification : {{job.qualification}}</h4>
+                        <h4>Experience : {{job.experience}}</h4>
+                        <h4>ClosingDate : {{job.closingDate|date}}</h4>
+                        <h4>Salary-Range : {{job.salaryRange}}</h4>           
+                        <!-- Button trigger model -->
+                        <button type="button" class="btn btn-light" (click)="apply()"style="background-color:rgb(148, 126, 144)" >
+                            Apply
+                        </button>
+                    </mat-card-content>
+                </mat-card>
+            </div>   
         </div>
     </div>
 </div>
